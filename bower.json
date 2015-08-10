@@ -1,0 +1,32 @@
+{
+  "name": "neonjs",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.1",
+    "neon": "~2.0.0"
+  },
+  "overrides": {
+    "neon": {
+      "main": [
+        "neon.js",
+        "stdlib/node_support.js",
+        "stdlib/custom_event.js",
+        "stdlib/custom_event_support.js",
+        "stdlib/widget.js"
+      ]
+    },
+
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.2.0",
+    "mocha": "~2.2.5"
+  }
+}
