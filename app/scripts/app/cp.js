@@ -11,9 +11,9 @@ Class(CP, 'App').includes(CustomEventSupport, NodeSupport, CoolMessage)({
     run: function run() {
       this.appendChild(new CP.UI.Slider({
         name: 'width',
-        min: 100,
-        max: 500,
-        value: 200
+        min: 200,
+        max: 600,
+        value: 250
       })).render(this._ui.container);
 
       this.appendChild(new CP.UI.Slider({
@@ -38,6 +38,7 @@ Class(CP, 'App').includes(CustomEventSupport, NodeSupport, CoolMessage)({
     },
     
     _bindEvents: function bindEvents() {
+
       CP.UI.Slider.bind('change', function(data) {
         this._sliderChangeHandler.call(this, data);
       }.bind(this));
