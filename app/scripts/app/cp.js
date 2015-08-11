@@ -1,4 +1,4 @@
-Class(CP, 'App').includes(CustomEventSupport, NodeSupport)({
+Class(CP, 'App').includes(CustomEventSupport, NodeSupport, CoolMessage)({
   prototype: {
     _ui: null,
 
@@ -11,7 +11,8 @@ Class(CP, 'App').includes(CustomEventSupport, NodeSupport)({
     run: function() {
       this.appendChild(new CP.UI.Thumb({
           name: 'thumb',
-          src: 'http://placekitten.com/300/401'
+          src: 'http://placekitten.com/300/401',
+          msg: this.getCoolMessage('cat')
         })).render(this._ui.container);
 
     }
