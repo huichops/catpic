@@ -1,26 +1,32 @@
 Class(CP.UI, 'Image').inherits(Widget)({
-    HTML : '<img></img>',
-    prototype : {
-        init : function init(config) {
-            Widget.prototype.init.call(this, config);
-            this.setSrc(config.src);
-        },
+  HTML : '<img></img>',
+  prototype : {
+    rounded:  false,
 
-        getElement: function getElement() {
-            return this.element;
-        },
+    init : function init(config) {
+      Widget.prototype.init.call(this, config);
+      if (config.rounded) this.setRounded();
+      this.setSrc(config.src);
+    },
 
-        setSrc: function setSrc(url) {
-            this.element.attr('src', url);
+    getElement: function getElement() {
+      return this.element;
+    },
 
-            return this;
-        },
+    setSrc: function setSrc(url) {
+      this.element.attr('src', url);
 
-        destroy : function destroy() {
-            Widget.prototype.destroy.call(this);
+      return this;
+    },
 
-            return null;
-        }
+    setRounded: function setRounded() {
+      this.element.addClass('rounded');
+      return this;
+    },
+
+    destroy : function destroy() {
+      Widget.prototype.destroy.call(this);
     }
+  }
 })
 

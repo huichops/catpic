@@ -1,19 +1,19 @@
 Class(CP, 'App').includes(CustomEventSupport, NodeSupport)({
   prototype: {
     _ui: null,
+
     init: function() {
       this._ui = {
-        container: $('#container')
+        container:  document.querySelector('#app-container')
       }
     },
     
     run: function() {
-      this.appendChild(new CP.UI.Image({
-          name: 'image',
-          src: 'http://placekitten.com/500/450'
-        }));
+      this.appendChild(new CP.UI.Thumb({
+          name: 'thumb',
+          src: 'http://placekitten.com/300/401'
+        })).render(this._ui.container);
 
-      this.image.render(this._ui.container);
     }
   }
 });
