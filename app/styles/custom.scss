@@ -1,0 +1,30 @@
+div {
+  box-sizing: border-box;
+}
+.outer {
+  max-width: 720px;
+  height: 650px;
+  position: relative;
+  background-color: whitesmoke;
+  padding: 15px 0;
+  margin: auto;
+  @extend .radius;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  color: white;
+  @extend .radius;
+}
+
+.img {
+  text-align: center;
+}
+
+.radius {
+  border-radius: 5px;
+}

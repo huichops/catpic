@@ -1,11 +1,13 @@
 Class(CP.UI, 'Thumb').inherits(Widget)({
   HTML : '\
       <div class="outer">\
+        <div class="inner">\
           <div class="content">\
-          <p class="msg"></p>\
+          <h4 class="msg"></h4>\
           </div>\
           <div class="img">\
           </div>\
+        </div>\
       </div>\
   ',
 
@@ -13,6 +15,7 @@ Class(CP.UI, 'Thumb').inherits(Widget)({
 
     imgContainer:  null,
     msgContainer: null,
+    _kittenURL: 'http://placekitten.com',
 
     init : function init(config) {
       Widget.prototype.init.call(this, config);
@@ -33,10 +36,14 @@ Class(CP.UI, 'Thumb').inherits(Widget)({
       return this.element;
     },
 
-    setSrc: function setSrc(url) {
-      this.image.attr('src', url);
+    setSize: function setSrc(width, height) {
+      this.image.setSrc(this._getKittenURL(width, height));
 
       return this;
+    },
+
+    _getKittenURL: function _getKittenURL(width, height) {
+      return this._kittenURL + '/' + width + '/' + height;
     },
 
     destroy: function destroy() {
