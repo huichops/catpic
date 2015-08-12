@@ -1,0 +1,1 @@
+CP={},CP.UI={},Module("CoolMessage")({prototype:{subject:"dog",words:["cool","awesome","amazing","mighty","rad"],getCoolMessage:function(o){var e=o||this.subject,s=Math.random()*this.words.length|0;return"The "+this.words[s]+" "+e}}});
